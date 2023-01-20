@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/bumbeishvili/d3-tip-for-v6@4/d3-tip.min.css"
+    />
+
+    <title>Expense Tracker</title>
+    <style>
+      h2,
+      p {
+        margin: 10px 0;
+      }
+      .header {
+        margin-bottom: 40px;
+      }
+      .d3-tip{
+       padding: 10px;
+         background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+      }
+      .d3-tip .delete{
+        color:hotpink;
+        font-size: 1rem;
+      }
+    </style>
+  </head>
+  <body class="indigo">
+    <header class="indigo darken-1 section">
+      <h2 class="center white-text">
+        Ninja Wonga
+        <p class="flow-text grey-text center text-lighten-2">
+          Monthly money tracker for Ashu...
+        </p>
+      </h2>
+    </header>
+
+    <div class="container section">
+      <div class="row">
+        <div class="col s12 m6">
+          <form class="card z-depth-0">
+            <div class="card-content">
+              <span class="card-title indigo-text">Add Item: </span>
+              <div class="input-field">
+                <input type="text" id="name" />
+                <label for="name"> Item Name</label>
+              </div>
+              <div class="input-field">
+                <input type="text" id="cost" />
+                <label for="name"> Item Cost</label>
+              </div>
+              <div class="input-field center">
+                <button class="btn-large pink white-text">Add Item</button>
+              </div>
+              <div class="input-field center">
+                <p class="red-text" id="error"></p>
+              </div>
+            </div>
+          </form>
+          <!-- <p class="flow-text grey-text center text-lighten-2">
+           Totale Expense: <span id="total"></span>
+          </p> -->
+        </div>
+        <div class="col s12 m5 push-m1">
+          <div class="canvas"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add firebase config -->
+
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyBB5vj8akih_xnAGx11wj4XDvzwSOIUs40",
+        authDomain: "udemy-d3-firebase-fc45b.firebaseapp.com",
+        projectId: "udemy-d3-firebase-fc45b",
+        storageBucket: "udemy-d3-firebase-fc45b.appspot.com",
+        messagingSenderId: "174354018930",
+        appId: "1:174354018930:web:0a6f1c0b0800b688de08eb",
+        measurementId: "G-JZH8KG3H11",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+      //   const settings = { timestampsInSnapshots: true };
+      //   db.settings(settings);
+    </script>
+
+    <!-- Include d3 library -->
+    <script src="https://d3js.org/d3.v6.js"></script>
+    <script src="https://d3js.org/d3.v7.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- CDN link for adding legend using the d3  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
+    <!-- CDN link for adding tooltip in the chart -->
+    <script src="https://unpkg.com/d3-v6-tip@1.0.6/build/d3-v6-tip.js"></script>
+
+    <!-- inlcude js file -->
+    <script src="index.js"></script>
+    <script src="graph.js"></script>
+  </body>
+</html>
