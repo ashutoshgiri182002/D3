@@ -1,2 +1,4 @@
+download data in csv form and save file as data.csv
+
 data source =>
 https://ourworldindata.org/coronavirus 
