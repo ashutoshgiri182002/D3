@@ -1,0 +1,1 @@
+Please add your own firebase config to run this project
