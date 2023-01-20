@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>COVID STATS</title>
+  </head>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: rgb(59, 59, 59);
+    }
+
+    .canvas {
+      height: 100vh;
+      width: 100vw;
+    }
+
+    svg {
+      height: 100%;
+      width: 100%;
+    }
+    .Other {
+      text-align: center;
+      position: absolute;
+      z-index: 10;
+      bottom: 100px;
+      right: 30px;
+      color: white;
+      font-size: larger;
+      max-width: 33vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .input {
+      width: 200px;
+      height: 200px;
+      align-items: center;
+      border: 1px solid red;
+      background-color: yellow;
+      border-radius: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .input h5 {
+      margin-top: 10px;
+      color: black;
+    }
+
+    .select{
+        height: 200px;
+        width: 200px;
+        background-color: antiquewhite;
+        border: 2px solid black;
+        color: black;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content:center;
+    }
+    .select h4{
+        margin-bottom: 10px;
+    }
+
+    select {
+      width: 150px;
+      height: 30px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      width: 70px;
+      height: 30px;
+      background-color: aqua;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    button:hover {
+      cursor: pointer;
+      background-color: rgb(0, 0, 0);
+      color: white;
+    }
+    #heading{
+      color: #aa0101;
+      font-size: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+  </style>
+
+  <body>
+    <h1 id="heading"></h1>
+    <div class="canvas">
+      <!-- Here all the d3 work done in the index.js file -->
+    </div>
+   
+    <div class="Other">
+        
+      <div class="select">
+        <h4>Select the continent</h4>
+        <select id="userInput" name="continent">
+          <option value="World">World</option>
+          <option value="Asia">Asia</option>
+          <option value="North America">North America</option>
+          <option value="Africa">Africa</option>
+          <option value="Europe">Europe</option>
+          <option value="South America">South America</option>
+          <option value="Antartica">Antartica</option>
+        </select>
+        <!-- <input type="text" id="userInput">give me input</input> -->
+        <button id="submitter">Submit</button>
+      </div>
+      <div id="output"></div>
+      <h1>COVID CASES 2020-21</h1>
+    </div>
+
+    <script src="https://d3js.org/d3.v7.min.js" defer></script>
+    <script src="index.js" defer></script>
+  </body>
+</html>
