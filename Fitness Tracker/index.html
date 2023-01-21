@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Fitness traker</title>
+  </head>
+  <body class="grey darken-4">
+    <div class="nav z-depth-0">
+      <div class="section center">
+        <h3 class="white-text center">-Fitness traker-</h3>
+      </div>
+    </div>
+
+    <div class="section center">
+      <p class="grey-text flow-text">A fitness traker for Ashutosh</p>
+    </div>
+
+    <div class="container section">
+      <div class="row">
+        <div class="col s12 l5">
+          <button class="active" data-activity="cycling">Cycling</button>
+          <button data-activity="running">Running</button>
+          <button data-activity="swimming">Swimming</button>
+          <button data-activity="waliking">Waliking</button>
+        </div>
+        <div class="col s12 l6 push-l1">
+          <div class="canvas"></div>
+        </div>
+      </div>
+      <div class="row">
+        <form class="col m6 push-m3">
+          <p class="flow-text grey-text center">
+            How much <span>cycling</span> have you done today?
+          </p>
+          <input
+            type="text"
+            class="grey-text"
+            id="cycling"
+            placeholder="Distance in meter"
+          />
+          <p class="center pink-text error text-lighten-1"></p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Add firebase config -->
+
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyBB5vj8akih_xnAGx11wj4XDvzwSOIUs40",
+        authDomain: "udemy-d3-firebase-fc45b.firebaseapp.com",
+        projectId: "udemy-d3-firebase-fc45b",
+        storageBucket: "udemy-d3-firebase-fc45b.appspot.com",
+        messagingSenderId: "174354018930",
+        appId: "1:174354018930:web:0a6f1c0b0800b688de08eb",
+        measurementId: "G-JZH8KG3H11",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+      //   const settings = { timestampsInSnapshots: true };
+      //   db.settings(settings);
+    </script>
+
+    <!-- Include d3 library -->
+    <script src="https://d3js.org/d3.v6.js"></script>
+    <script src="https://d3js.org/d3.v7.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- inlcude js file -->
+    <script src="index.js"></script>
+    <script src="graph.js"></script>
+  </body>
+</html>
